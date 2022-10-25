@@ -8,7 +8,7 @@ main {
     display: grid;
     grid-template-columns: auto 60% auto;
     grid-template-rows: auto;
-    background-color: hsl(0, 0%, 25%);
+    background-color: #282828;
 }
 
 nav {
@@ -27,10 +27,8 @@ nav {
 section {
     grid-column-start: 2;
     grid-column-end: 3;
-    padding: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: #282828;
 }
 
 picture:nth-child(2)
