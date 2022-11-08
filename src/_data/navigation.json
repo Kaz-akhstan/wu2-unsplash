@@ -1,0 +1,30 @@
+[
+    {
+        "url": "/",
+        "title": "Italy"
+    },
+    {
+        "url": "/Austria",
+        "title": "Austria"
+    },
+    {
+        "url": "/France",
+        "title": "France"
+    },
+    {
+        "url": "/Switzerland",
+        "title": "Switzerland"
+    },
+    {
+        "url": "/Vatican",
+        "title": "Vatican City"
+    },
+    {
+        "url": "/Marino",
+        "title": "San Marino"
+    },
+    {
+        "url": "/Slovenia",
+        "title": "Slovenia"
+    }
+]
