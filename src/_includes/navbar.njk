@@ -1,5 +1,6 @@
 <nav>
-    <ul>
+    <button class="menu-button" onclick="toggleMenu()"><span class="material-symbols-outlined">menu</span></button>
+    <ul id="nav">
         {% for item in navigation %}
             <li>
                 <a href="{{ item.url }}">{{ item.title }}</a>

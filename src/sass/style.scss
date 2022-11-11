@@ -2,6 +2,7 @@
 
 body {
     background-color: #404040;
+    overscroll-behavior: none;
 }
 
 main {
@@ -14,7 +15,7 @@ main {
     gap: 1rem;
 }
 
-main > h1 {
+main>h1 {
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -47,22 +48,36 @@ section:nth-child(2) {
 }
 
 .coatOfArms {
-    > picture {
+    >picture {
         margin: auto 0;
-        > img {
+
+        >img {
             padding: 2rem 0;
             width: 15rem;
         }
     }
 }
 
+.show {
+    display: flex;
+}
+
+.menu-button {
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
 nav {
     background-color: #252525;
     position: sticky;
+    display: flex;
+    flex-direction: row;
     top: 0;
 }
 
-nav > ul {
+nav>ul {
     margin: 0;
     display: flex;
     flex-direction: row;
@@ -72,48 +87,50 @@ nav > ul {
     padding: 0;
 }
 
-nav > ul > li > a {
+nav>ul>li>a {
     display: inline-block;
     padding: 1rem;
     color: white;
     text-decoration: none;
 }
 
-nav > ul > li > a:hover {
+nav>ul>li>a:hover {
     background-color: #404040;
 }
 
-nav > ul > li:nth-child(1) {
-    margin-right: auto;
-    background-color: crimson;
-}
+@media (min-width: 769px) {
+    nav>ul>li:nth-child(1) {
+        margin-right: auto;
+        background-color: crimson;
+    }
 
-@media (min-width: 769px)
-{
     section:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 2;
     }
-    
+
     section:nth-child(2) {
         grid-column-start: 2;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 3;
     }
-    
+
     section:nth-child(3) {
         grid-column-start: 1;
         grid-column-end: 2;
     }
+
+    .menu-button {
+        display: none;
+    }
 }
 
-@media (max-width: 768px)
-{
+@media (max-width: 768px) {
     main {
         display: grid;
         grid-template-columns: 1fr;
-        width: 90%;
+        width: 95%;
         grid-template-rows: repeat(4, 1fr);
         gap: 1rem;
     }
@@ -126,12 +143,34 @@ nav > ul > li:nth-child(1) {
     section:nth-child(1) {
         grid-row: span 1;
     }
-    
+
     section:nth-child(2) {
         grid-row: span 2;
     }
-    
+
     section:nth-child(3) {
         grid-row: span 1;
+    }
+
+    .menu-button {
+        margin-left: auto;
+        display: block;
+    }
+    nav {
+        flex-direction: column;
+    }
+
+    nav>ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav>ul>li {
+        justify-content: right;
+        margin: 0;
+    }
+
+    nav>ul>li>a {
+        width: 100%;
     }
 }

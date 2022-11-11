@@ -21,6 +21,8 @@ async function imageShortcode(src, alt, sizes) {
 module.exports = function (eleventyConfig) {
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addWatchTarget("./src/sass/");
+    eleventyConfig.addWatchTarget("./src/javascript/");
+    eleventyConfig.addPassthroughCopy("./src/javascript/");
     return {
         dir: {
             input: 'src',
