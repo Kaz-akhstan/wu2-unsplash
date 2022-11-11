@@ -40,24 +40,10 @@ picture {
     margin: auto 0;
 }
 
-section:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-
 section:nth-child(2) {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
     justify-content: center;
     align-items: baseline;
     text-align: start;
-}
-
-section:nth-child(3) {
-    grid-column-start: 1;
-    grid-column-end: 2;
 }
 
 .coatOfArms {
@@ -67,16 +53,6 @@ section:nth-child(3) {
             padding: 2rem 0;
             width: 15rem;
         }
-    }
-}
-
-@media(max-width: 760px)
-{
-    main {
-        padding: 1rem;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto, 1fr);
-        width: 90%;
     }
 }
 
@@ -110,4 +86,52 @@ nav > ul > li > a:hover {
 nav > ul > li:nth-child(1) {
     margin-right: auto;
     background-color: crimson;
+}
+
+@media (min-width: 769px)
+{
+    section:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    
+    section:nth-child(2) {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    
+    section:nth-child(3) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+}
+
+@media (max-width: 768px)
+{
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    section {
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+
+    section:nth-child(1) {
+        grid-row: span 1;
+    }
+    
+    section:nth-child(2) {
+        grid-row: span 2;
+    }
+    
+    section:nth-child(3) {
+        grid-row: span 1;
+    }
 }
